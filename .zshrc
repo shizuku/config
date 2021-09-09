@@ -97,8 +97,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias l="ls -lh"
-alias la="ls -lah"
+alias l="exa -lhbgSH --time-style=long-iso --git --icons"
+alias la="exa -lhbgSHa --time-style=long-iso --git --icons"
 alias c="clear"
 alias r="ranger"
 alias rb="reboot"
@@ -110,54 +110,106 @@ alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 
+#export CC="/usr/local/bin/gcc-10"
+
 #source ~/.oh-my-zsh/plugins/incr/incr*.zsh
 
-# export PATH="$HOME/anaconda3/bin/:$PATH"
-export PATH="$HOME/miniconda3/bin/:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
 
-export PATH="$PATH:$HOME/workspace/flutter/flutter/bin/"
-export PATH="$PATH:$HOME/workspace/flutter/flutter/bin/cache/dart-sdk/bin/"
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/code/scripts/bin"
+# export PATH="$PATH:$HOME/workspace/scripts/bin"
 
-export PATH="$PATH:$HOME/go/bin/"
-
-export PATH="$PATH:$HOME/workspace/scripts/bin/"
-
-# Android
-export ANDROID_HOME="$HOME/workspace/Android/Sdk"
 
 # electron
-export ELECTRON_MIRROR="https://cdn.npm.taobao.org/dist/electron/"
+export ELECTRON_MIRROR="https://cdn.npm.taobao.org/dist/electron"
 
-# dart flutter
-export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub
-export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
+
+export JDK_HOME="/usr/lib/jvm/java-11-jdk"
+export JAVA_HOME="/usr/lib/jvm/java-11-jdk"
+
+
+# android
+export ANDROID_HOME="$HOME/code/android/sdk"
+export ANDROID_SDK_ROOT="$HOME/code/android/sdk"
+export STUDIO_JDK="$JAVA_HOME"
+export STUDIO_GRADLE_JDK="$JAVA_HOME"
+
+
+#dart flutter
+export PATH="$PATH:$HOME/code/flutter/flutter/bin/cache/dart-sdk/bin"
+export PATH="$PATH:$HOME/code/flutter/flutter/bin"
 export TERMINFO=/usr/share/terminfo
+# export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub
+# export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
+# export PUB_HOSTED_URL=https://pub.flutter-io.cn
+# export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+export PUB_HOSTED_URL=https://mirrors.sjtug.sjtu.edu.cn/dart-pub
+export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
+export CHROME_EXECUTABLE=google-chrome-stable
 
-#rustup
+
+# rustup
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+export PATH="$HOME/.cargo/bin/:$PATH"
+
 
 # export QT_PLUGIN_PATH=/opt/anaconda/plugins
 export QT_DEBUG_PLUGINS=1
 
+
+# jfx
 export PATH_TO_FX="$HOME/workspace/jfx/javafx-sdk-15.0.1/lib"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/shizuku/.sdkman"
-[[ -s "/home/shizuku/.sdkman/bin/sdkman-init.sh" ]] && source "/home/shizuku/.sdkman/bin/sdkman-init.sh"
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+
+export DOTNET_ROOT="$HOME/.dotnet"
+export PATH="$PATH:$DOTNET_ROOT"
+
+
+function con() {
+#export PATH="$HOME/anaconda3/bin:$PATH"
+export PATH="$HOME/miniconda3/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/shizuku/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/shizuku/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/shizuku/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/shizuku/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+}
 
+
+#source "$HOME/.kotlin-native/kotlin-native.sh"
+#export PATH="$HOME/.kotlin-native/versions/v1.4.20/bin:$PATH"
+
+
+export NO_PROXY=localhost,127.0.0.1
+proxy () {
+  export http_proxy="http://127.0.0.1:7892"
+  export https_proxy="http://127.0.0.1:7892"
+  echo "HTTP Proxy on"
+}
+proxyoff () {
+  unset http_proxy
+  unset https_proxy
+  echo "HTTP Proxy off"
+}
+
+
+PATH="/home/shizuku/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/shizuku/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/shizuku/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/shizuku/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/shizuku/perl5"; export PERL_MM_OPT;
