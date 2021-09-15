@@ -1,0 +1,14 @@
+# edit and save this file to /usr/lib/systemd/system/clash.service
+[Unit]
+Description=clash
+After=network.target
+
+[Service]
+WorkingDirectory=/home/shizuku/.config/clash
+ExecStart=/home/shizuku/.config/clash/start-clash.sh
+ExecStop=/home/shizuku/.config/clash/stop-clash.sh
+Environment="HOME=/home/shizuku/"
+Environment="CLASH_URL=https://ghelper.me/clash/c46f53320ff32a0aa26cce090b0724ca"
+
+[Install]
+WantedBy=multi-user.target

@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/shizuku/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -118,15 +118,20 @@ export PATH="$PATH:$HOME/.local/bin"
 
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/code/scripts/bin"
-# export PATH="$PATH:$HOME/workspace/scripts/bin"
 
 
 # electron
 export ELECTRON_MIRROR="https://cdn.npm.taobao.org/dist/electron"
 
 
+# java
 export JDK_HOME="/usr/lib/jvm/java-11-jdk"
 export JAVA_HOME="/usr/lib/jvm/java-11-jdk"
+
+
+# hadoop
+export HADOOP_INSTALL="$HOME/code/hadoop/hadoop-2.10.1"
+export PATH="$PATH:${HADOOP_INSTALL}/bin:${HADOOP_INSTALL}/sbin"
 
 
 # android
@@ -162,32 +167,35 @@ export QT_DEBUG_PLUGINS=1
 export PATH_TO_FX="$HOME/workspace/jfx/javafx-sdk-15.0.1/lib"
 
 
+# volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 
+# dotnet
 export DOTNET_ROOT="$HOME/.dotnet"
 export PATH="$PATH:$DOTNET_ROOT"
 
 
+# conda
 function con() {
-#export PATH="$HOME/anaconda3/bin:$PATH"
-export PATH="$HOME/miniconda3/bin:$PATH"
+  #export PATH="$HOME/anaconda3/bin:$PATH"
+  export PATH="$HOME/miniconda3/bin:$PATH"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+  # >>> conda initialize >>>
+  # !! Contents within this block are managed by 'conda init' !!
+  __conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "$HOME/miniconda3/etc/profile.d/conda.sh"
+      else
+          export PATH="$HOME/miniconda3/bin:$PATH"
+      fi
+  fi
+  unset __conda_setup
+  # <<< conda initialize <<<
 }
 
 
@@ -197,8 +205,8 @@ unset __conda_setup
 
 export NO_PROXY=localhost,127.0.0.1
 proxy () {
-  export http_proxy="http://127.0.0.1:7892"
-  export https_proxy="http://127.0.0.1:7892"
+  export http_proxy="socks5://127.0.0.1:17891"
+  export https_proxy="socks5://127.0.0.1:17891"
   echo "HTTP Proxy on"
 }
 proxyoff () {
@@ -207,9 +215,3 @@ proxyoff () {
   echo "HTTP Proxy off"
 }
 
-
-PATH="/home/shizuku/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/shizuku/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/shizuku/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/shizuku/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/shizuku/perl5"; export PERL_MM_OPT;

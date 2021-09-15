@@ -24,6 +24,8 @@ hide_edge_borders both
 # is used in the bar {} block below.
 font pango:Source Code Pro 9
 
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 exec_always --no-startup-id fcitx5
 exec_always --no-startup-id variety
 exec_always --no-startup-id picom -o 0 -D 0 -b
@@ -101,6 +103,7 @@ bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show drun
 
 bindsym $mod+c exec google-chrome-stable
 bindsym $mod+x exec code
@@ -295,6 +298,6 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
+# bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 
-bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 ########### dracula ##########
