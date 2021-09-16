@@ -7,10 +7,9 @@ ln -s "$(pwd)/.vimrc" "$HOME/.vimrc"
 rm "$HOME/.zshrc"
 ln -s "$(pwd)/.zshrc" "$HOME/.zshrc"
 
+
 rm -rf "$HOME/.config/alacritty"
 ln -s "$(pwd)/alacritty" "$HOME/.config/alacritty"
-rm -rf "$HOME/.config/clash"
-ln -s "$(pwd)/clash" "$HOME/.config/clash"
 rm -rf "$HOME/.config/i3"
 ln -s "$(pwd)/i3" "$HOME/.config/i3"
 rm -rf "$HOME/.config/i3status"
@@ -25,3 +24,9 @@ rm -rf "$HOME/.config/polybar"
 ln -s "$(pwd)/polybar" "$HOME/.config/polybar"
 rm -rf "$HOME/.config/ranger"
 ln -s "$(pwd)/ranger" "$HOME/.config/ranger"
+
+
+mkdir "$HOME/.config/clash"
+ln -s "$(pwd)/clash/clash.service" "$HOME/.config/clash/clash.service"
+ln -s "$(pwd)/clash/start-clash.sh" "$HOME/.config/clash/start-clash.sh"
+ln -s "$(pwd)/clash/stop-clash.sh" "$HOME/.config/clash/stop-clash.sh"
