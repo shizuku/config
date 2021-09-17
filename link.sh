@@ -7,10 +7,10 @@ link() {
 
 
 link "$(pwd)/.zshrc" "$HOME/.zshrc"
+link "$(pwd)/.bashrc" "$HOME/.bashrc"
 link "$(pwd)/.clang-format" "$HOME/.clang-format"
 link "$(pwd)/.nvimrc" "$HOME/.nvimrc"
 link "$(pwd)/.vimrc" "$HOME/.vimrc"
-link "$(pwd)/.zshrc" "$HOME/.zshrc"
 
 
 link "$(pwd)/alacritty" "$HOME/.config/alacritty"

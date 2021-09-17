@@ -116,10 +116,14 @@ alias -s bz2='tar -xjvf'
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-export PATH="$PATH:$HOME/.local/bin"
 
-export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/code/scripts/bin"
+
+
+# go
+export GOPATH="$HOME/code/go"
+export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
 
 
 # electron
