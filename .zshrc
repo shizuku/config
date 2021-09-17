@@ -132,8 +132,8 @@ export JAVA_HOME="/usr/lib/jvm/java-11-jdk"
 
 
 # hadoop
-export HADOOP_INSTALL="$HOME/code/hadoop/hadoop-2.10.1"
-export PATH="$PATH:${HADOOP_INSTALL}/bin:${HADOOP_INSTALL}/sbin"
+# export HADOOP_INSTALL="$HOME/hadoop"
+# export PATH="$PATH:${HADOOP_INSTALL}/bin:${HADOOP_INSTALL}/sbin"
 
 
 # android
@@ -166,7 +166,7 @@ export QT_DEBUG_PLUGINS=1
 
 
 # jfx
-export PATH_TO_FX="$HOME/workspace/jfx/javafx-sdk-15.0.1/lib"
+export PATH_TO_FX="$HOME/code/jfx/javafx-sdk-15.0.1/lib"
 
 
 # volta
