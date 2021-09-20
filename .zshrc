@@ -68,7 +68,21 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo pip extract z wd vi-mode history-substring-search archlinux)
+plugins=(
+  git
+  bundler
+  sudo
+  pip
+  extract
+  z
+  wd
+  vi-mode
+  vscode
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  history-substring-search
+  archlinux
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -185,29 +199,27 @@ export DOTNET_ROOT="$HOME/.dotnet"
 export PATH="$PATH:$DOTNET_ROOT"
 
 
-# conda
-con() {
-  export PATH="$HOME/code/miniconda3/bin:$PATH"
+#source "$HOME/.kotlin-native/kotlin-native.sh"
+#export PATH="$HOME/.kotlin-native/versions/v1.4.20/bin:$PATH"
 
+
+con() {
+  # export PATH="$HOME/code/miniconda3/bin:$PATH"  # commented out by conda initialize
   # >>> conda initialize >>>
   # !! Contents within this block are managed by 'conda init' !!
   __conda_setup="$('$HOME/code/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
   if [ $? -eq 0 ]; then
-      eval "$__conda_setup"
+    eval "$__conda_setup"
   else
-      if [ -f "$HOME/code/miniconda3/etc/profile.d/conda.sh" ]; then
-          . "$HOME/code/miniconda3/etc/profile.d/conda.sh"
-      else
-          export PATH="$HOME/code/miniconda3/bin:$PATH"
-      fi
+    if [ -f "$HOME/code/miniconda3/etc/profile.d/conda.sh" ]; then
+      . "$HOME/code/miniconda3/etc/profile.d/conda.sh"
+    else
+      export PATH="$HOME/code/miniconda3/bin:$PATH"
+    fi
   fi
   unset __conda_setup
   # <<< conda initialize <<<
 }
-
-
-#source "$HOME/.kotlin-native/kotlin-native.sh"
-#export PATH="$HOME/.kotlin-native/versions/v1.4.20/bin:$PATH"
 
 
 export NO_PROXY=localhost,127.0.0.1
@@ -221,4 +233,6 @@ proxyoff () {
   unset https_proxy
   echo "HTTP Proxy off"
 }
+
+
 
