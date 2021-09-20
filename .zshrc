@@ -82,6 +82,7 @@ plugins=(
   zsh-syntax-highlighting
   history-substring-search
   archlinux
+  git-open
 )
 
 source $ZSH/oh-my-zsh.sh
