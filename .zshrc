@@ -125,6 +125,8 @@ alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 
+export EDITOR="/usr/bin/nvim"
+
 #export CC="/usr/local/bin/gcc-10"
 
 #source ~/.oh-my-zsh/plugins/incr/incr*.zsh
