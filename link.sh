@@ -30,3 +30,9 @@ fi
 link "$(pwd)/clash/clash.service" "$HOME/.config/clash/clash.service"
 link "$(pwd)/clash/start-clash.sh" "$HOME/.config/clash/start-clash.sh"
 link "$(pwd)/clash/stop-clash.sh" "$HOME/.config/clash/stop-clash.sh"
+link "$(pwd)/clash/fetch.sh"      "$HOME/.config/clash/fetch.sh"
+
+
+
+
+

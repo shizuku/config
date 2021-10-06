@@ -206,23 +206,20 @@ export PATH="$PATH:$DOTNET_ROOT"
 #export PATH="$HOME/.kotlin-native/versions/v1.4.20/bin:$PATH"
 
 
-con() {
-  # export PATH="$HOME/code/miniconda3/bin:$PATH"  # commented out by conda initialize
-  # >>> conda initialize >>>
-  # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$('$HOME/code/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('$HOME/code/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+  eval "$__conda_setup"
+else
+  if [ -f "$HOME/code/miniconda3/etc/profile.d/conda.sh" ]; then
+    . "$HOME/code/miniconda3/etc/profile.d/conda.sh"
   else
-    if [ -f "$HOME/code/miniconda3/etc/profile.d/conda.sh" ]; then
-      . "$HOME/code/miniconda3/etc/profile.d/conda.sh"
-    else
-      export PATH="$HOME/code/miniconda3/bin:$PATH"
-    fi
+    export PATH="$HOME/code/miniconda3/bin:$PATH"
   fi
-  unset __conda_setup
-  # <<< conda initialize <<<
-}
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
 
 export NO_PROXY=localhost,127.0.0.1
