@@ -2,6 +2,18 @@ local cmd = vim.api.nvim_command
 
 local is_nvim_lsp = os.getenv('NVIM_LSP') == 'true'
 
+----------------------------------------------------------------
+--start pack.nvim install
+local fn = vim.fn
+
+local packer_install_dir = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(packer_install_dir)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', packer_install_dir})
+    cmd('packadd packer.nvim')
+end
+--end packer.nvim install
+-----------------------------------------------------------------
+
 -- Only required if you have packer in your `opt` pack
 cmd([[packadd packer.nvim]])
 
@@ -185,7 +197,17 @@ return require('packer').startup({
                 require('neoscroll').setup({ hide_cursor = false })
             end,
         })
-
+        use({
+            'Shougo/defx.nvim',
+            requires = {
+                {
+                    'roxma/nvim-yarp',
+                },
+                {
+                    'roxma/vim-hug-neovim-rpc',
+                },
+            },
+        })
         -------------------------
         -- Editing to the MOON --
         -------------------------

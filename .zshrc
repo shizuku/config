@@ -224,8 +224,8 @@ unset __conda_setup
 
 export NO_PROXY=localhost,127.0.0.1
 proxy () {
-  export http_proxy="socks5://127.0.0.1:17891"
-  export https_proxy="socks5://127.0.0.1:17891"
+  export http_proxy="http://127.0.0.1:17891"
+  export https_proxy="http://127.0.0.1:17891"
   echo "HTTP Proxy on"
 }
 proxyoff () {
