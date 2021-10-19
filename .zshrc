@@ -136,7 +136,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/code/scripts/bin"
-
+export PATH="$PATH:$HOME/.luarocks/bin"
 
 # go
 export GOPATH="$HOME/code/go"
