@@ -32,7 +32,7 @@ return require('packer').startup({
         -- Package Manager --
         ---------------------
 
-        use({ 'wbthomason/packer.nvim', opt = true })
+        use('wbthomason/packer.nvim')
 
         ----------------------
         -- Required plugins --
@@ -197,17 +197,25 @@ return require('packer').startup({
                 require('neoscroll').setup({ hide_cursor = false })
             end,
         })
+
         use({
             'Shougo/defx.nvim',
+            event = 'BufRead',
             requires = {
                 {
-                    'roxma/nvim-yarp',
+                    'kristijanhusak/defx-git',
+                    event = 'BufRead',
                 },
                 {
-                    'roxma/vim-hug-neovim-rpc',
+                    'kristijanhusak/defx-icons',
+                    event = 'BufRead',
                 },
             },
+            config = function()
+                require('plugins.defx')
+            end,
         })
+
         -------------------------
         -- Editing to the MOON --
         -------------------------

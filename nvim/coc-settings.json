@@ -1,0 +1,34 @@
+{
+  "languageserver": {
+    "kotlin": {
+      "command": "~/code/kotlin/server/bin/kotlin-language-server",
+      "filetypes": ["kotlin"]
+    },
+    "digestif": {
+      "command": "digestif",
+      "filetypes": ["tex", "plaintex", "context"]
+    },
+    "sql": {
+      "command": "sql-language-server",
+      "args": ["up", "--method", "stdio"],
+      "filetypes": ["sql", "mysql"]
+    }
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "lua",
+    "json",
+    "cpp",
+    "cc",
+    "hpp",
+    "hh",
+    "c",
+    "h",
+    "java",
+    "kotlin",
+    "dart",
+    "go",
+    "rust",
+    "python",
+    "sql"
+  ]
+}

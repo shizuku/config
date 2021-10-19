@@ -99,9 +99,21 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/shizuku/.local/share/nvim/site/pack/packer/opt/coc.nvim"
   },
+  ["defx-git"] = {
+    loaded = false,
+    needs_bufread = true,
+    path = "/home/shizuku/.local/share/nvim/site/pack/packer/opt/defx-git"
+  },
+  ["defx-icons"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/shizuku/.local/share/nvim/site/pack/packer/opt/defx-icons"
+  },
   ["defx.nvim"] = {
-    loaded = true,
-    path = "/home/shizuku/.local/share/nvim/site/pack/packer/start/defx.nvim"
+    config = { "\27LJ\1\2,\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\17plugins.defx\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/shizuku/.local/share/nvim/site/pack/packer/opt/defx.nvim"
   },
   ["git-messenger.vim"] = {
     config = { "\27LJ\1\0025\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\26plugins.git-messenger\frequire\0" },
@@ -214,14 +226,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shizuku/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
-  ["nvim-yarp"] = {
-    loaded = true,
-    path = "/home/shizuku/.local/share/nvim/site/pack/packer/start/nvim-yarp"
-  },
   ["packer.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/shizuku/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+    loaded = true,
+    path = "/home/shizuku/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   playground = {
     load_after = {
@@ -292,10 +299,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/shizuku/.local/share/nvim/site/pack/packer/opt/vim-better-whitespace"
   },
-  ["vim-hug-neovim-rpc"] = {
-    loaded = true,
-    path = "/home/shizuku/.local/share/nvim/site/pack/packer/start/vim-hug-neovim-rpc"
-  },
   ["vim-repeat"] = {
     loaded = false,
     needs_bufread = false,
@@ -331,8 +334,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au CursorHold * ++once lua require("packer.load")({'nvim-treesitter', 'nvim-tree.lua', 'Navigator.nvim', 'FTerm.nvim', 'telescope.nvim', 'nvim-colorizer.lua', 'splitjoin.vim'}, { event = "CursorHold *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'vim-surround', 'targets.vim', 'vim-better-whitespace', 'tcomment_vim', 'gitsigns.nvim', 'vim-repeat', 'hop.nvim', 'coc.nvim', 'vim-bbye', 'git-messenger.vim', 'BufOnly.nvim', 'nvim-lspconfig', 'todo-comments.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au CursorHold * ++once lua require("packer.load")({'nvim-treesitter', 'nvim-tree.lua', 'Navigator.nvim', 'telescope.nvim', 'nvim-colorizer.lua', 'splitjoin.vim', 'FTerm.nvim'}, { event = "CursorHold *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'vim-surround', 'targets.vim', 'vim-better-whitespace', 'tcomment_vim', 'gitsigns.nvim', 'vim-repeat', 'hop.nvim', 'nvim-lspconfig', 'defx-icons', 'coc.nvim', 'vim-bbye', 'defx-git', 'git-messenger.vim', 'BufOnly.nvim', 'todo-comments.nvim', 'defx.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertCharPre * ++once lua require("packer.load")({'nvim-autopairs', 'vscode-es7-javascript-react-snippets', 'vim-snippets'}, { event = "InsertCharPre *" }, _G.packer_plugins)]]
 vim.cmd [[au WinScrolled * ++once lua require("packer.load")({'neoscroll.nvim'}, { event = "WinScrolled *" }, _G.packer_plugins)]]
 vim.cmd [[au BufEnter * ++once lua require("packer.load")({'bufferline.nvim', 'lualine.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
