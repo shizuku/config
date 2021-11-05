@@ -127,7 +127,8 @@ alias -s bz2='tar -xjvf'
 
 export EDITOR="/usr/bin/nvim"
 
-#export CC="/usr/local/bin/gcc-10"
+export CC="/usr/bin/clang"
+export CXX="/usr/bin/clang++"
 
 #source ~/.oh-my-zsh/plugins/incr/incr*.zsh
 
@@ -224,8 +225,8 @@ unset __conda_setup
 
 export NO_PROXY=localhost,127.0.0.1
 proxy () {
-  export http_proxy="http://127.0.0.1:17891"
-  export https_proxy="http://127.0.0.1:17891"
+  export http_proxy="http://127.0.0.1:9981"
+  export https_proxy="http://127.0.0.1:9981"
   echo "HTTP Proxy on"
 }
 proxyoff () {
