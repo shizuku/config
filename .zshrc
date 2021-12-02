@@ -124,6 +124,7 @@ alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
+alias wttr="curl wttr.in/shuangliu"
 
 export EDITOR="/usr/bin/nvim"
 
@@ -180,7 +181,8 @@ export CHROME_EXECUTABLE=google-chrome-stable
 
 
 # rustup
-export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 export PATH="$HOME/.cargo/bin/:$PATH"
 
 
@@ -223,7 +225,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
-export NO_PROXY=localhost,127.0.0.1
+export NO_PROXY="localhost,127.0.0.1"
 proxy () {
   export http_proxy="http://127.0.0.1:9981"
   export https_proxy="http://127.0.0.1:9981"
