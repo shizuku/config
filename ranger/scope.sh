@@ -94,6 +94,14 @@ handle_extension() {
             xlsx2csv -- "${FILE_PATH}" && exit 5
             exit 1;;
 
+        ## DOC
+        doc)
+            /usr/bin/catdoc < "${FILE_PATH}" && exit 5 exit 1;;
+
+        ## DOCX
+        docx)
+            /bin/pandoc < "${FILE_PATH}" && exit 5 exit 1;;
+
         ## HTML
         htm|html|xhtml)
             ## Preview as text conversion
