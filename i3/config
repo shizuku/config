@@ -103,7 +103,7 @@ bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show combi
 
 bindsym $mod+c exec google-chrome-stable
 bindsym $mod+x exec code
@@ -260,7 +260,7 @@ bar {
     tray_output       primary
 
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    font pango:Source Code Pro 10
+    font pango:Source Code Pro 12px
 
 #    colors {
 #        background #555544
