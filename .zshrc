@@ -125,6 +125,7 @@ alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 alias wttr="curl wttr.in/shuangliu"
+alias pandoc_pdf="pandoc --pdf-engine=xelatex -V 'mainfont=SimSun'"
 
 export EDITOR="/usr/bin/nvim"
 
@@ -139,6 +140,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/code/scripts/bin"
 export PATH="$PATH:$HOME/.luarocks/bin"
+
 
 # go
 export GOPATH="$HOME/code/go"
